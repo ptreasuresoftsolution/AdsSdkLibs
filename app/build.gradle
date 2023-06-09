@@ -33,9 +33,9 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.my-company'
-            artifactId = 'my-library'
-            version = '1.0'
+            groupId = 'com.github.ptreasuresoftsolution'
+            artifactId = 'AdsSdkLibs'
+            version = '1.0.1'
         }
     }
     repositories {
@@ -50,6 +50,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':adsconfig')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
