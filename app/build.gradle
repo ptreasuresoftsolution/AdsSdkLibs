@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'maven-publish'
 }
 
 android {
@@ -29,21 +28,6 @@ android {
     }
 
 
-}
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.github.ptreasuresoftsolution'
-            artifactId = 'AdsSdkLibs'
-            version = '1.0.2'
-        }
-    }
-    repositories {
-        maven {
-            name = 'adsconfig'
-            url = "${project.buildDir}/adsconfig"
-        }
-    }
 }
 dependencies {
 
