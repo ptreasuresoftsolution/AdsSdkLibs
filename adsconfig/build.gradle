@@ -25,16 +25,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    flavorDimensions 'mode'
-    productFlavors {
-        full {}
-        demo {}
-    }
 
     publishing {
-        // Publishes "fullRelease" build variant with "fullRelease" component created by
-        // Android Gradle plugin
-        singleVariant("fullRelease")
+        multipleVariants("full") {
+            includeBuildTypeValues("debug", "release")
+            includeFlavorDimensionAndValues("mode", "full")
+        }
     }
 
     /*publishing {
@@ -60,11 +56,11 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            fullRelease(MavenPublication) {
-                from components.fullRelease
+            full(MavenPublication) {
+                from components.full
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
-                version = '1.0.5'
+                version = '1.0.6'
             }
             /*allVariants(MavenPublication) {
                 from components.default
