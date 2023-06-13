@@ -25,36 +25,53 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+    flavorDimensions 'mode'
+    productFlavors {
+        full {}
+        demo {}
+    }
 
     publishing {
+        // Publishes "fullRelease" build variant with "fullRelease" component created by
+        // Android Gradle plugin
+        singleVariant("fullRelease")
+    }
+
+    /*publishing {
         multipleVariants {
             allVariants()
         }
-        /*publications {
+        *//*publications {
             release(MavenPublication) {
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
                 version = '1.0.3'
             }
-        }*/
+        }*//*
 
-        /* repositories {
+        *//* repositories {
              maven {
                  name = 'adsconfig'
                  url = "${project.buildDir}/adsconfig"
              }
-         }*/
-    }
+         }*//*
+    }*/
 }
 afterEvaluate {
     publishing {
         publications {
-            allVariants(MavenPublication) {
+            fullRelease(MavenPublication) {
+                from components.fullRelease
+                groupId = 'com.github.ptreasuresoftsolution'
+                artifactId = 'AdsSdkLibs'
+                version = '1.0.5'
+            }
+            /*allVariants(MavenPublication) {
                 from components.default
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
                 version = '1.0.4'
-            }
+            }*/
         }
     }
 }
