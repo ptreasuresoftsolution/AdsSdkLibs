@@ -37,7 +37,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
-                version = '1.0.4'
+                version = '1.0.9'
                 artifact(bundleReleaseAar)
             }
         }
