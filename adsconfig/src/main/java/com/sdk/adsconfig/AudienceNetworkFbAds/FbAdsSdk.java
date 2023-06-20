@@ -23,6 +23,7 @@ import com.facebook.ads.RewardedVideoAd;
 import com.facebook.ads.RewardedVideoAdListener;
 import com.sdk.adsconfig.AdsHelper;
 import com.sdk.adsconfig.AdsSdkConfig;
+import com.sdk.adsconfig.UnlockButton;
 import com.sdk.adsconfig.admobads.AppOpenManager;
 
 public class FbAdsSdk extends AdsSdkConfig {

@@ -3,6 +3,13 @@ package com.sdk.adsconfig;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
+
+import com.facebook.ads.AdSettings;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+
+import java.util.List;
+
 public class AdsHelper {
     static ProgressDialog progressDialog;
     public static void PleaseWaitShow(Context context) {
@@ -34,5 +41,13 @@ public class AdsHelper {
         } catch (Exception e) {
         }
 
+    }
+    public static void addTestDeviceFb(String deviceIdHash){
+        AdSettings.addTestDevice(deviceIdHash);
+    }
+    public static void setTestDeviceAdMob(List<String> testDeviceIds){
+        RequestConfiguration configuration =
+                new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
+        MobileAds.setRequestConfiguration(configuration);
     }
 }
