@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.sdk.adsconfig'
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         minSdk 24
-        targetSdk 32
+        targetSdk 31
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -37,7 +37,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
-                version = '2.0.1'
+                version = '1.9.4'
                 artifact(bundleReleaseAar)
             }
         }
@@ -57,7 +57,7 @@ afterEvaluate {
 }*/
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
