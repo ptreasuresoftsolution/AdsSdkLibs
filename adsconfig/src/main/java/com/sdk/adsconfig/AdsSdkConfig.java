@@ -208,7 +208,7 @@ public class AdsSdkConfig {
         if (getAdsType().equalsIgnoreCase("Admob") || getAdsType().equalsIgnoreCase("Adx"))
             return adsPreferences.getString(nativeId, "ca-app-pub-3940256099942544/2247696110");
         else if (getAdsType().equalsIgnoreCase("Facebook"))
-            return adsPreferences.getString(nativeId, "YOUR_PLACEMENT_ID");
+            return adsPreferences.getString(nativeId, "YOUR_PLACEMENT_ID|YOUR_PLACEMENT_ID");
         else
             return adsPreferences.getString(nativeId, "TEST_OTHER_ID");
     }

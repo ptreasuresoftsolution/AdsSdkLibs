@@ -582,6 +582,19 @@ public class FbAdsSdk extends AdsSdkConfig {
     }
 
     //native
+    private String getNativeBannerAdId() {
+        String nativeIds[] = getNativeId().split("|");
+        return nativeIds[0];
+    }
+
+    private String getNativeSizeAdId() {
+        String nativeIds[] = getNativeId().split("|");
+        if (nativeIds.length > 1)
+            return nativeIds[1];
+        else
+            return nativeIds[0];
+    }
+
     public NativeAdLayout getFbNativeAdLayout(Context context) {
         NativeAdLayout nativeAdLayout = new NativeAdLayout(context);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -612,7 +625,8 @@ public class FbAdsSdk extends AdsSdkConfig {
             return;
         }
         mobileFbAdsInit();
-        NativeBannerAd nativeBannerAd = new NativeBannerAd(context, getNativeId());
+
+        NativeBannerAd nativeBannerAd = new NativeBannerAd(context, getNativeBannerAdId());
         nativeBannerAd.loadAd(nativeBannerAd.buildLoadAdConfig().withAdListener(new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
@@ -671,7 +685,7 @@ public class FbAdsSdk extends AdsSdkConfig {
             return;
         }
         mobileFbAdsInit();
-        NativeAd nativeAd = new NativeAd(context, getNativeId());
+        NativeAd nativeAd = new NativeAd(context, getNativeSizeAdId());
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withMediaCacheFlag(NativeAdBase.MediaCacheFlag.NONE).withAdListener(new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
