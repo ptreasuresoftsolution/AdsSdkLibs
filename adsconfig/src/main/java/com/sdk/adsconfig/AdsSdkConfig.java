@@ -320,6 +320,7 @@ public class AdsSdkConfig {
     }
 
     public void initAds(boolean isAdsRemove) {
+        this.isAdsRemove = isAdsRemove;
         if (getAdsType().equalsIgnoreCase("Admob") || getAdsType().equalsIgnoreCase("Adx"))
             admobAds = new AdmobAds(context, isAdsRemove);
         else if (getAdsType().equalsIgnoreCase("Facebook"))
@@ -327,6 +328,7 @@ public class AdsSdkConfig {
     }
 
     public void initAds(boolean isAdsRemove, AdsInitListener initListener) {
+        this.isAdsRemove = isAdsRemove;
         if (getAdsType().equalsIgnoreCase("Admob") || getAdsType().equalsIgnoreCase("Adx"))
             admobAds = new AdmobAds(context, new OnInitializationCompleteListener() {
                 @Override
