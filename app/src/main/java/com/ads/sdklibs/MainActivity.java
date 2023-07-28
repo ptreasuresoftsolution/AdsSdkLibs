@@ -3,25 +3,13 @@ package com.ads.sdklibs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.facebook.ads.Ad;
-import com.facebook.ads.AdError;
-import com.facebook.ads.NativeAdLayout;
-import com.facebook.ads.NativeAdListener;
-import com.facebook.ads.NativeBannerAd;
-import com.sdk.adsconfig.AdsHelper;
 import com.sdk.adsconfig.AdsSdkConfig;
-import com.sdk.adsconfig.AudienceNetworkFbAds.FacebookNativeInflated;
 
 public class MainActivity extends AppCompatActivity {
     AdsSdkConfig adsSdkConfig;
     LinearLayout ad_view;
-
-    private NativeBannerAd nativeBannerAd;
-
-    private NativeAdLayout nativeBannerAdLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

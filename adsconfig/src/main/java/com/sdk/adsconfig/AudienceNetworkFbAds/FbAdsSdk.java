@@ -625,7 +625,6 @@ public class FbAdsSdk extends AdsSdkConfig {
             return;
         }
         mobileFbAdsInit();
-Log.e("Cjheck","facebook ids "+getNativeBannerAdId());
         NativeBannerAd nativeBannerAd = new NativeBannerAd(context, getNativeBannerAdId());
         nativeBannerAd.loadAd(nativeBannerAd.buildLoadAdConfig().withAdListener(new NativeAdListener() {
             @Override
