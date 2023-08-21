@@ -8,7 +8,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        minSdk 24
+        minSdk 21
         targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,7 +37,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.ptreasuresoftsolution'
                 artifactId = 'AdsSdkLibs'
-                version = '2.0.3'
+                version = '3.0.0'
                 artifact(bundleReleaseAar)
             }
         }
